@@ -1,4 +1,4 @@
 mp
 ==
 
-motion picture (CLI)
+CLI for IMDB, basically.
