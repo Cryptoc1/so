@@ -1,0 +1,29 @@
+{
+  "name": "mp",
+  "version": "1.0.0",
+  "description": "CLI for IMDB, basically.",
+  "scripts": {
+    "test": "mp \"Pulp Fiction\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/probablyjosh/mp.git"
+  },
+  "keywords": [
+    "imdb",
+    "movies",
+    "cli",
+    "tv",
+    "search"
+  ],
+  "author": "Josh Trommel <joshtrommel@gmail.com> (http://joshtrommel.com)",
+  "license": "MIT",
+  "preferGlobal": true,
+  "bin": {
+    "mp": "app.js"
+  },
+  "bugs": {
+    "url": "https://github.com/probablyjosh/mp/issues"
+  },
+  "homepage": "https://github.com/probablyjosh/mp#readme"
+}
