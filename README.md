@@ -1,21 +1,15 @@
-# so
+so
+==
 
-CLI for movies and TV shows.
+Plain English CLI for movies and TV shows.
 
+Example Input
+```
+$ so how good is breaking bad
+```
 
-# Installation
-
-If you don't use `pipsi`, you're missing out.
-Here are [installation instructions](https://github.com/mitsuhiko/pipsi#readme).
-
-Simply run:
-
-    $ pipsi install .
-
-
-# Usage
-
-To use it:
-
-    $ so --help
+Response
+```
+Its average rating is 9.0/10
+```
 
