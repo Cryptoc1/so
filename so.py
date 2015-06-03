@@ -7,11 +7,9 @@ request = "http://www.omdbapi.com/?t={}".format(query)
 r = requests.get(request)
 
 if r.status_code == 200:
-	if r.json()['Error']:
-		english_query = query.replace('%20', ' ')
-		print "Error: {}".format(r.json()['Error'])
-	else:
+	try:
+		print '\n{}\n'.format(r.json()['Plot'])
+	finally:
 		print r.json()
-
 else:
 	print 'Error: Request was not made'
