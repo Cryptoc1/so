@@ -1,4 +1,4 @@
 mp
 ==
 
-CLI for IMDB, basically.
+CLI for movies and TV shows.
