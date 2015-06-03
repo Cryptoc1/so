@@ -1,4 +1,4 @@
-how
+so
 ==
 
 Plain English CLI for movies and TV shows.
