@@ -6,10 +6,14 @@ request = "http://www.omdbapi.com/?t={}".format(query)
 
 r = requests.get(request)
 
+print r.status_code
+
 if r.status_code == 200:
-	try:
-		print '\n{}\n'.format(r.json()['Plot'])
-	finally:
-		print r.json()
+	if r.json()['Response']:
+		print 'response fine'
+		print r.json()['Plot']
+	else:
+		print 'response not ok'
+		print r.json()['Error']
 else:
 	print 'Error: Request was not made'
