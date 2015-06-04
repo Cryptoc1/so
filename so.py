@@ -1,19 +1,37 @@
+#!/usr/bin/env python
 # So, a plain English CLI for your favourite movies and shows
 import requests, sys
 
-query = '%20'.join(sys.argv[1:])
-request = "http://www.omdbapi.com/?t={}".format(query)
 
-r = requests.get(request)
+DEVMODE = True
+_usage = "Usage:\n\t./so.py <movie title>"
 
-print r.status_code
+def main():
+    if len(sys.argv) > 1:
+        do_request(sys.argv)
+    else:
+        print _usage
 
-if r.status_code == 200:
-	if r.json()['Response']:
-		print 'response fine'
-		print r.json()['Plot']
-	else:
-		print 'response not ok'
-		print r.json()['Error']
-else:
-	print 'Error: Request was not made'
+def do_request(args):
+    request = "http://www.omdbapi.com/?t={}".format('%20'.join(args[1:]))
+    r = requests.get(request)
+    # Make sure the request didn't fail
+    if r.status_code == 200:
+        resp = r.json()
+        if resp['Response'] != "True":
+            if DEVMODE:
+                print 'Response not okay\n'
+	    print r.json()['Error']
+        else:
+            if DEVMODE:
+                print 'Response Okay\n'
+            for i in resp:
+                print format_resp(resp, i)
+    else:
+        print 'Error: Request was not made'
+
+def format_resp(list, index):
+    return index + ": " + list[index]
+
+if __name__ == "__main__":
+    main()
